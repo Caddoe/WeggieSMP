@@ -5,7 +5,13 @@ if(isset($_POST["submit"])) {
   $subject = $_POST["subject"];
   $message = $_POST["message"];
 
-
+  
+  $mailTo = "WeggieSMP@outlook.com";
+  $header = "From: ".$name;
+  
+  
+  mail($mailTo, $subject, $message, $header);
+  header("Location: index.html?mailSend");
 }
 
 
